@@ -17,7 +17,7 @@ export function FavoritesProvider({ children }: FavoritesProviderProps) {
 
   const addFavorite = (id: string): void => {
     setFavorites((prev) => {
-      if (prev.includes(id)) return prev; // no duplicates
+      if (prev.includes(id)) return prev;
       return [...prev, id];
     });
   };

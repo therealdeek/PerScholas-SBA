@@ -1,4 +1,3 @@
-/// src/pages/RecipeDetailPage.tsx
 import { useParams, useNavigate } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Spinner from "../components/Spinner";
@@ -19,8 +18,6 @@ function getIngredients(
     const ingredient = meal[`strIngredient${i}`];
     const measure = meal[`strMeasure${i}`];
 
-    // TheMealDB pads unused slots with empty strings or null —
-    // we skip those to avoid rendering empty list items.
     if (ingredient && ingredient.trim()) {
       ingredients.push({
         ingredient: ingredient.trim(),
@@ -84,7 +81,6 @@ function RecipeDetailPage() {
             <span className="tag">&#127758; {meal.strArea}</span>
           </div>
 
-          {/* Favorite toggle — label and style flip based on current state */}
           <button
             onClick={handleFavoriteToggle}
             className={`btn ${favorited ? "btn--outline" : "btn--primary"}`}
@@ -95,7 +91,6 @@ function RecipeDetailPage() {
             {favorited ? "♥ Remove from Favorites" : "♡ Add to Favorites"}
           </button>
 
-          {/* Ingredients */}
           <div className="recipe-detail__ingredients">
             <h2>Ingredients</h2>
             <ul className="ingredients-list">

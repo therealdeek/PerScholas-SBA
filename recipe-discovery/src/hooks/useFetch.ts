@@ -2,9 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import type { FetchState } from "../types";
 
 function useFetch<T>(url: string): FetchState<T> {
-  // Initialize loading based on whether we have a URL.
-  // If no URL is passed, we are not loading — nothing to fetch.
-  // This avoids the synchronous setState call inside the effect.
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState<boolean>(!!url);
   const [error, setError] = useState<string | null>(null);

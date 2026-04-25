@@ -5,7 +5,6 @@ interface ErrorMessageProps {
 function ErrorMessage({ message }: ErrorMessageProps) {
   return (
     <div className="error-wrapper" role="alert">
-      {/* role="alert" tells screen readers to announce this immediately */}
       <p className="error-message">⚠️ {message}</p>
     </div>
   );

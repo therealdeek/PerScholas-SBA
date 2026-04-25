@@ -1,4 +1,3 @@
-// src/components/FavoriteCard.tsx
 import { Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Spinner from "./Spinner";
@@ -17,7 +16,6 @@ function FavoriteCard({ mealId }: FavoriteCardProps) {
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`,
   );
 
-  // While loading, show a contained spinner inside the card slot
   if (loading)
     return (
       <div className="recipe-card">

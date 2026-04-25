@@ -1,4 +1,3 @@
-// src/pages/SearchPage.tsx
 import { useSearchParams, Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Spinner from "../components/Spinner";
@@ -11,9 +10,6 @@ interface SearchResponse {
 }
 
 function SearchPage() {
-  // useSearchParams reads the ?query= part of the URL.
-  // It returns a URLSearchParams object — we call .get() to read a value.
-  // React Router docs: https://reactrouter.com/en/main/hooks/use-search-params
   const [searchParams] = useSearchParams();
   const query = searchParams.get("query") ?? "";
 
@@ -34,7 +30,6 @@ function SearchPage() {
 
       <h1 className="page-title">Results for "{query}"</h1>
 
-      {/* TheMealDB returns meals: null when nothing matches — handle it */}
       {!data?.meals ? (
         <div className="empty-state">
           <h2>No results found</h2>

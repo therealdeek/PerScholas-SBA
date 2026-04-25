@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -6,7 +5,6 @@ function Navbar() {
   const [query, setQuery] = useState<string>("");
   const navigate = useNavigate();
 
-  // React.FormEvent instead of the named import FormEvent
   const handleSearch = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     const trimmed = query.trim();
